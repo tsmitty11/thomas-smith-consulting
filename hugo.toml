@@ -1,3 +1,17 @@
 baseURL = "https://example.org/"
 languageCode = "en-us"
 title = "Thomas Smith Consulting"
+
+[build]
+  [[build.cachebusters]]
+    source = "(postcss|tailwind)\\.config\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "assets/.*\\.js"
+    target = "css"
+  [[build.cachebusters]]
+    source = "layouts/.*\\.html"
+    target = "css"
+  [[build.cachebusters]]
+    source = "content/.*\\.md"
+    target = "css"

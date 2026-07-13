@@ -2,8 +2,7 @@
   "name": "thomas-smith-consulting",
   "private": true,
   "scripts": {
-    "dev": "hugo server --buildDrafts --disableFastRender",
-    "css:rebuild": "touch assets/css/main.css",
+    "dev": "hugo server --buildDrafts",
     "build": "hugo --minify"
   },
   "devDependencies": {
