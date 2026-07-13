@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode }}" class="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="https://use.typekit.net/coz2wwv.css">
+    {{ $styles := resources.Get "css/main.css" | postCSS }}
+    {{ if hugo.IsProduction }}
+      {{ $styles = $styles | minify | fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}"{{ with $styles.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end }}>
+  </head>
+  <body class="font-sans pt-16 bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    {{ partial "navbar.html" . }}
+    {{ block "main" . }}{{ end }}
+
+    {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" hugo.IsProduction) }}
+    {{ if hugo.IsProduction }}
+      {{ $js = $js | fingerprint }}
+    {{ end }}
+    <script src="{{ $js.RelPermalink }}"{{ with $js.Data.Integrity }} integrity="{{ . }}" crossorigin="anonymous"{{ end }} defer></script>
+  </body>
+</html>
