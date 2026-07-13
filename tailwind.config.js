@@ -10,6 +10,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        swiss: {
+          ink: "#1A1A1A",
+          charcoal: "#2E2E2E",
+          gray: "#4D4D4D",
+          offwhite: "#EDEDED",
+          red: "#C8403A",
+          "red-dark": "#8C2B24",
+          "red-light": "#DD7C6E",
+          yellow: "#F0BB3E",
+          "yellow-light": "#F6DD84",
+          blue: "#2C5D82",
+          "blue-light": "#5C9BC7",
+          "blue-deep": "#1F4E72",
+        },
+      },
       fontFamily: {
         sans: [
           "neue-haas-grotesk-text",
