@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "hugo server --buildDrafts --disableFastRender",
+    "css:rebuild": "touch assets/css/main.css",
     "build": "hugo --minify"
   },
   "devDependencies": {
